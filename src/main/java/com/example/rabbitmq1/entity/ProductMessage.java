@@ -1,9 +1,8 @@
 package com.example.rabbitmq1.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.UUID;
 
 @Entity
 public class ProductMessage {
@@ -16,6 +15,10 @@ public class ProductMessage {
     private int quantity;
     private String productCode;
     private String content;
+
+    @Column(unique = true, nullable = false)
+    private String messageId = UUID.randomUUID().toString();
+
 
     public ProductMessage() {}
 
@@ -37,5 +40,8 @@ public class ProductMessage {
     public void setProductCode(String productCode) { this.productCode = productCode; }
     public String getContent() { return content; }
     public void setContent(String content) { this.content = content; }
+
+    public String getMessageId() { return messageId; }
+    public void setMessageId(String messageId) { this.messageId = messageId; }
 }
 

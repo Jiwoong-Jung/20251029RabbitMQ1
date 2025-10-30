@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+//@Controller
 public class MessageController {
 
     private final MessageProducer producer;
@@ -24,7 +24,7 @@ public class MessageController {
     public String index(Model model) {
         List<MessageEntity> messages = repository.findAll();
         model.addAttribute("messages", messages);
-        return "index";
+        return "index3";
     }
 
     @PostMapping("/send")

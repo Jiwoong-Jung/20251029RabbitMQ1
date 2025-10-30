@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+//@Controller
 public class ProductMessageController {
 
     private final ProductMessageProducer producer;
